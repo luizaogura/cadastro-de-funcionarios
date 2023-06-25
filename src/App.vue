@@ -83,6 +83,13 @@ export default {
     }
   },
   methods: {
+    getEmployee() {
+      axios.get('http://187.60.56.72:3131/funcionario?criadorId=7d9d4f54-616f-40d0-9213-9b9448284ae1')
+        .then(res => {
+          this.employees = res;
+          console.log(res);
+        })
+    },
     addEmployee() {
       this.employees.push({ ...this.newEmployee });
       this.newEmployee = {
